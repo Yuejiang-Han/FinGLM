@@ -1,6 +1,6 @@
 import os
 
-GPU_ID = 0
+GPU_ID = 1
 os.environ['CUDA_VISIBLE_DEVICES'] = str(GPU_ID)
 
 from datetime import datetime
@@ -31,8 +31,8 @@ def check_paths():
         raise Exception('XPDF_PATH not exists: {}'.format(cfg.XPDF_PATH))
     else:
         os.chdir(cfg.XPDF_PATH)
-        os.system('./pdftotext -table -enc UTF-8 /app/test.pdf /app/test.txt')
-        with open('/app/test.txt', 'r', encoding='utf-8') as f:
+        # os.system('./pdftotext -table -enc UTF-8 /app/test.pdf /app/test.txt')
+        with open('/data1/hyj/test.txt', 'r', encoding='utf-8') as f:
             print(f.readlines()[:10])
         print('Test xpdf success!')
 

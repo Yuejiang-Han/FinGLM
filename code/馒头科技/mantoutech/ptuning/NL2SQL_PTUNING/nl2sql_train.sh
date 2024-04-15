@@ -10,8 +10,8 @@ torchrun --standalone --nnodes=1 --nproc-per-node=$NUM_GPUS main.py \
     --prompt_column question \
     --response_column answer \
     --overwrite_cache \
-    --model_name_or_path /tcdata/chatglm2-6b \
-    --output_dir output/my-chatglm2-6b-pt-$PRE_SEQ_LEN-$LR \
+    --model_name_or_path /data1/hyj/data/models/chatglm2-6b \
+    --output_dir /data1/hyj-$PRE_SEQ_LEN-$LR \
     --overwrite_output_dir \
     --max_source_length 2200 \
     --max_target_length 300 \
@@ -19,7 +19,7 @@ torchrun --standalone --nnodes=1 --nproc-per-node=$NUM_GPUS main.py \
     --per_device_eval_batch_size 1 \
     --gradient_accumulation_steps 16 \
     --predict_with_generate \
-    --max_steps 600 \
+    --max_steps 6 \
     --logging_steps 10 \
     --save_steps 100 \
     --learning_rate $LR \
